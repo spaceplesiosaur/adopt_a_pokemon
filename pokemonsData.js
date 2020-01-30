@@ -1,4 +1,4 @@
-const pokemonCallExample = {
+let pokemonsData = {
     "results": [
         {
             "name": "bulbasaur",
@@ -372,3 +372,5 @@ const pokemonCallExample = {
         }
     ]
 }
+
+module.exports = pokemonsData;

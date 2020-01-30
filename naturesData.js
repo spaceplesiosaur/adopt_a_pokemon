@@ -1,4 +1,4 @@
-const natures = {
+let naturesData = {
     "results": [
         {
             "name": "hardy",
@@ -99,6 +99,58 @@ const natures = {
             "name": "naive",
             "good": "agreeableness",
             "bad": "intellect"
+        },
+        {
+            "name": "brave",
+            "good": "energy",
+            "bad": "intellect"
+        },
+        {
+            "name": "relaxed",
+            "good": "agreeableness",
+            "bad": "energy"
+        },
+        {
+            "name": "quiet",
+            "good": "emotional_stability",
+            "bad": "energy"
+        },
+        {
+            "name": "sassy",
+            "good": "energy",
+            "bad": "agreeableness"
+        },
+        {
+            "name": "serious",
+            "good": "conscientiousness",
+            "bad": "energy"
+        },
+        {
+            "name": "lazy",
+            "good": "intellect",
+            "bad": "energy"
+        },
+        {
+            "name": "chaotic",
+            "good": "energy",
+            "bad": "emotional_stability"
+        },
+        {
+            "name": "bouncy",
+            "good": "energy",
+            "bad": "extraversion"
+        },
+        {
+            "name": "dead",
+            "good": "extraversion",
+            "bad": "energy"
+        },
+        {
+            "name": "cheerful",
+            "good": "energy",
+            "bad": "conscientiousness"
         }
     ]
 }
+
+module.exports = naturesData;
