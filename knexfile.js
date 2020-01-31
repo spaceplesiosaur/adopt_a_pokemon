@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL + `?ssl=true`,
+    connection: 'postgres://localhost/pokepairs',
     migrations: {
       directory: './db/migrations'
     },
@@ -13,6 +13,15 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
+
+    production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL + `?ssl=true`,
+    migrations: {
+      directory: './db/migrations'
+    },
+    useNullAsDefault: true
+  }
 
 //   staging: {
 //     client: 'postgresql',
