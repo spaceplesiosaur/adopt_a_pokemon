@@ -2,6 +2,8 @@
 
 //You initialize knex to create this file.
 
+//on the server.js, we import knex and feed it one of the objects from this file as the configuration - it will then use the object to tell it how to run the app.
+
 module.exports = {
 //module.exports is basically telling your app what you want it to look at when it requires this file, or module.  In this case it require the entire knex configuration object.
   development: {
