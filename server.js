@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-// app.use(express.static('public'))
 // app.use(cors());
 
 const environment = process.env.NODE_ENV || 'development';
@@ -15,6 +14,9 @@ app.use(express.json())
 app.get('/api/v1/natures', async (request, response) => {
   try {
     const natures = await database('natures').select();
+    if(!natures.length) {
+      return response.status(404).json({error: "unable to find that list"})
+    }
     response.status(200).json(natures);
   } catch(error) {
     response.status(500).json({ error });
@@ -24,6 +26,9 @@ app.get('/api/v1/natures', async (request, response) => {
 app.get('/api/v1/pokemon', async (request, response) => {
   try {
     const pokemon = await database('pokemon').select();
+    if(!pokemon.length) {
+      return response.status(404).json({error: "unable to find that list"})
+    }
     response.status(200).json(pokemon);
   } catch(error) {
     response.status(500).json({ error });
@@ -109,7 +114,7 @@ app.delete('/api/v1/pokemon/:id', async (request, response) => {
   }
   try {
     await database('pokemon').where('id', request.params.id).del();
-    response.status(204).json("good job it's gone")
+    response.status(204)
   } catch (error) {
     response.status(500).json({ error });
   }
