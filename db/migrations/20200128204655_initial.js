@@ -1,4 +1,4 @@
-
+//this file is generated with knex, 
 exports.up = function(knex) {
   return knex.schema
     .createTable('natures', function (table) {
