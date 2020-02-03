@@ -11,7 +11,7 @@ module.exports = {
     connection: 'postgres://localhost/pokepairs',
     //Lots of things can go into the connection object - user, password, etc.  In our case, we're just telling local host to connect to the postgres library and we're nameing our app pokepairs.
 
-    //HELPHELPHELP
+    //this is a uri.  postgres is the protocol - like http.  With localhost we are telling it to look locally, and pokepairs is the name of our database.  This was named when I ran Create Database in postgres in terminal and named it pokepairs, a name that I now regret.
     migrations: {
       directory: './db/migrations'
     },
@@ -19,7 +19,7 @@ module.exports = {
     seeds: {
       directory: "./db/seeds/dev"
     },
-    //This object tells knex where to find our seed file, the file that actually seeds the table with our data.
+    //This object tells knex where to make seed file, the file that actually seeds the table with our data. We tell knex to make seed files with knex seed:make seed_name in the terminal
     useNullAsDefault: true,
     //this key/value pair basically tells knex what do to with any undefined values in our tables.  Data can sometimes be messy, and in this case, we're telling it to just put null when the data isn't explicitly provided.
   },
